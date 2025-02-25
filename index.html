@@ -17,18 +17,15 @@
             animation: gradientAnimation 10s ease infinite;
             color: black; 
         }
-
         @keyframes gradientAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
         .logo {
             width: 150px;
             margin-bottom: 20px;
         }
-
         .ma-finder-logo {
             font-size: 36px;
             font-weight: bold;
@@ -37,13 +34,32 @@
             justify-content: center;
             color: #FFFFFF;
         }
-
+        .ma-finder-logo span {
+            animation: colorChange 1s infinite;
+            font-weight: bold;
+            margin: 0 2px;
+        }
+        .ma-finder-logo span:nth-child(1) { animation-delay: 0s; }
+        .ma-finder-logo span:nth-child(2) { animation-delay: 0.1s; }
+        .ma-finder-logo span:nth-child(3) { animation-delay: 0.2s; }
+        .ma-finder-logo span:nth-child(4) { animation-delay: 0.3s; }
+        .ma-finder-logo span:nth-child(5) { animation-delay: 0.4s; }
+        .ma-finder-logo span:nth-child(6) { animation-delay: 0.5s; }
+        .ma-finder-logo span:nth-child(7) { animation-delay: 0.6s; }
+        .ma-finder-logo span:nth-child(8) { animation-delay: 0.7s; }
+        .ma-finder-logo span:nth-child(9) { animation-delay: 0.8s; }
+        @keyframes colorChange {
+            0% { color: #FF5733; }
+            25% { color: #33FF57; }
+            50% { color: #FFD700; }
+            75% { color: #FF33A1; }
+            100% { color: #FF5733; }
+        }
         input[type="text"] {
             width: 300px;
             padding: 10px;
             font-size: 16px;
         }
-
         input[type="submit"] {
             padding: 10px 20px;
             margin-top: 10px;
@@ -53,41 +69,18 @@
             border: none;
             cursor: pointer;
         }
-
         input[type="submit"]:hover {
             background-color: #357AE8;
         }
-
         .result {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 20px;
         }
-
         .result img {
             max-width: 50px;
             margin-right: 10px;
-        }
-
-        /* Game Styling */
-        #gameContainer {
-            display: none;
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background-color: #70c5ce;
-            overflow: hidden;
-        }
-
-        #bird {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: yellow;
-            border-radius: 50%;
-            left: 50px;
-            top: 200px;
         }
     </style>
 </head>
@@ -108,11 +101,8 @@
         <input type="text" id="searchInput" placeholder="Digite sua pesquisa...">
         <input type="submit" value="Pesquisar">
     </form>
-    <div class="result" id="result"></div>
-
-  
-    <div id="gameContainer">
-        <div id="bird"></div>
+    <div class="result" id="result">
+        
     </div>
 
     <script src="js/script.js"></script>
