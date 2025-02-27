@@ -9,10 +9,12 @@ body {
     animation: gradientAnimation 10s ease infinite;
     color: black;
     display: flex;
+    flex-direction: column; /* Para dispositivos móveis */
 }
 
 .main-content {
     flex-grow: 1;
+    width: 100%; /* Para dispositivos móveis */
 }
 
 .sidebar {
@@ -41,7 +43,7 @@ body {
 }
 
 .sidebar img {
-    max-width: 100000px; 
+    max-width: 100%; 
     border-radius: 5px;
 }
 
@@ -160,6 +162,7 @@ input[type="submit"]:hover {
 @media (max-width: 768px) {
     body {
         margin: 20px;
+        display: block; /* Alteração para melhorar a responsividade */
     }
 
     .ma-finder-logo {
