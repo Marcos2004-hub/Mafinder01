@@ -35,4 +35,49 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
 
                 fetch(apiUrl)
                     .then(response => response.json())
-                    .
+                    .then(data => {
+                        var videoTitle = data.items[0].snippet.title;
+
+                        var redirectText = document.createElement('span');
+                        redirectText.textContent = 'Redirecionando para YouTube';
+                        resultDiv.appendChild(redirectText);
+
+                        var videoContainer = document.createElement('div');
+                        videoContainer.className = 'video-container';
+
+                        var img = document.createElement('img');
+                        img.src = thumbnailUrl;
+                        img.className = 'thumbnail';
+                        videoContainer.appendChild(img);
+
+                        var text = document.createElement('span');
+                        text.className = 'video-title';
+                        text.textContent = videoTitle;
+                        videoContainer.appendChild(text);
+
+                        resultDiv.appendChild(videoContainer);
+
+                        setTimeout(function() {
+                            window.location.href = query;
+                        }, 2000);
+                    });
+            } else {
+                var text = document.createElement('span');
+                text.textContent = 'URL do YouTube inválida';
+                resultDiv.appendChild(text);
+            }
+        } else {
+            var text = document.createElement('span');
+            var siteName = new URL(query).hostname.replace('www.', '');
+            text.textContent = 'Redirecionando para ' + siteName;
+            resultDiv.appendChild(text);
+
+            setTimeout(function() {
+                window.location.href = query;
+            }, 2000);
+        }
+    } else {
+        var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+        window.location.href = searchUrl;
+    }
+});
