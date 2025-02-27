@@ -14,7 +14,7 @@ body {
 
 .main-content {
     flex-grow: 1;
-    width: 100%;
+    width: 100%; 
 }
 
 .sidebar {
@@ -190,7 +190,7 @@ input[type="submit"]:hover {
         margin-bottom: 10px;
     }
 
-    
+   
     @media (orientation: portrait) {
         .sidebar {
             position: fixed;
@@ -200,7 +200,7 @@ input[type="submit"]:hover {
             top: unset;
             flex-direction: row;
             justify-content: space-around;
-            padding: 10px 0;
+            padding: 20px 0; 
             border-radius: 0;
             background: linear-gradient(120deg, #ff0080, #ff8c00, #40e0d0);
         }
@@ -211,12 +211,16 @@ input[type="submit"]:hover {
             text-align: center;
         }
 
+        .sidebar img {
+            max-width: 40px; 
+        }
+
         .main-content {
-            margin-bottom: 80px; 
+            margin-bottom: 120px; 
         }
     }
 
-   
+    
     @media (orientation: landscape) {
         .sidebar {
             position: fixed;
@@ -233,6 +237,10 @@ input[type="submit"]:hover {
 
         .sidebar a {
             margin: 8px 0;
+        }
+
+        .sidebar img {
+            max-width: 40px; 
         }
 
         .main-content {
