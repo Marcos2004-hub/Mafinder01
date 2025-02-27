@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
@@ -9,12 +10,12 @@ body {
     animation: gradientAnimation 10s ease infinite;
     color: black;
     display: flex;
-    flex-direction: column; /* Para dispositivos móveis */
+    flex-direction: column; 
 }
 
 .main-content {
     flex-grow: 1;
-    width: 100%; /* Para dispositivos móveis */
+    width: 100%; 
 }
 
 .sidebar {
@@ -162,7 +163,7 @@ input[type="submit"]:hover {
 @media (max-width: 768px) {
     body {
         margin: 20px;
-        display: block; /* Alteração para melhorar a responsividade */
+        display: block; 
     }
 
     .ma-finder-logo {
@@ -188,5 +189,27 @@ input[type="submit"]:hover {
     .result img {
         margin: 0 auto;
         margin-bottom: 10px;
+    }
+
+   
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: unset;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        border-radius: 0;
+        background: linear-gradient(120deg, #ff0080, #ff8c00, #40e0d0);
+    }
+
+    .sidebar a {
+        margin: 0;
+    }
+
+    .main-content {
+        margin-bottom: 80px; 
     }
 }
