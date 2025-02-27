@@ -1,5 +1,4 @@
 
-
 document.getElementById('searchForm').addEventListener('submit', function(e) {
     e.preventDefault();
     var query = document.getElementById('searchInput').value.trim();
@@ -23,7 +22,7 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
             var videoId = null;
 
             if (query.includes('youtu.be')) {
-                videoId = query.split('/').pop();
+                videoId = query.split('/').pop().split('?')[0];
             } else if (query.includes('youtube.com')) {
                 var urlParams = new URLSearchParams(new URL(query).search);
                 videoId = urlParams.get('v');
@@ -62,7 +61,7 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
 
                         setTimeout(function() {
                             window.location.href = query;
-                        }, 2000); 
+                        }, 2000);
                     });
             } else {
                 var text = document.createElement('span');
