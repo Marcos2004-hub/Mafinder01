@@ -9,12 +9,12 @@ body {
     animation: gradientAnimation 10s ease infinite;
     color: black;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 }
 
 .main-content {
     flex-grow: 1;
-    width: 100%; 
+    width: 100%;
 }
 
 .sidebar {
@@ -162,7 +162,7 @@ input[type="submit"]:hover {
 @media (max-width: 768px) {
     body {
         margin: 20px;
-        display: block;
+        display: block; 
     }
 
     .ma-finder-logo {
@@ -191,26 +191,52 @@ input[type="submit"]:hover {
     }
 
     
-    .sidebar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: unset;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 10px 0;
-        border-radius: 0;
-        background: linear-gradient(120deg, #ff0080, #ff8c00, #40e0d0);
+    @media (orientation: portrait) {
+        .sidebar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: unset;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-radius: 0;
+            background: linear-gradient(120deg, #ff0080, #ff8c00, #40e0d0);
+        }
+
+        .sidebar a {
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .main-content {
+            margin-bottom: 80px; 
+        }
     }
 
-    .sidebar a {
-        margin: 0;
-        flex-grow: 1;
-        text-align: center;
-    }
+   
+    @media (orientation: landscape) {
+        .sidebar {
+            position: fixed;
+            right: 10px;
+            top: 20%;
+            left: unset;
+            bottom: unset;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 10px;
+            border-radius: 10px;
+            background: linear-gradient(120deg, #ff0080, #ff8c00, #40e0d0);
+        }
 
-    .main-content {
-        margin-bottom: 80px; 
+        .sidebar a {
+            margin: 8px 0;
+        }
+
+        .main-content {
+            margin-bottom: 0; 
+        }
     }
 }
