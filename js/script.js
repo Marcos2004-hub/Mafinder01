@@ -1,3 +1,4 @@
+var imageUrl = 'sua-imagem.png';
 
 document.getElementById('searchForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -61,7 +62,7 @@ document.getElementById('searchForm').addEventListener('submit', function(e) {
 
                         setTimeout(function() {
                             window.location.href = query;
-                        }, 2000);
+                        }, 2000); 
                     });
             } else {
                 var text = document.createElement('span');
