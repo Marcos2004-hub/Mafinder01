@@ -24,7 +24,7 @@ body {
     position: fixed;
     right: 10px;
     top: 20%;
-    width: 60px;  
+    width: 60px;
     background: linear-gradient(120deg, #ff0080, #ff8c00, #40e0d0);
     background-size: 400% 400%;
     animation: gradientAnimation 10s ease infinite;
@@ -33,7 +33,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     cursor: grab;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, top 0.3s ease;
 }
 
 .sidebar.movable {
@@ -51,7 +51,7 @@ body {
 }
 
 .sidebar img {
-    max-width: 60px; 
+    max-width: 60px;
     border-radius: 5px;
 }
 
@@ -204,7 +204,7 @@ input[type="submit"]:hover {
     }
 
     .sidebar {
-        top: 10%;
+        top: 50%;
         right: 5px;
         width: 50px;
     }
