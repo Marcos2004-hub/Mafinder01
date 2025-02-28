@@ -9,12 +9,12 @@ body {
     animation: gradientAnimation 10s ease infinite;
     color: black;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-content {
     flex-grow: 1;
-    width: 100%; 
 }
 
 .sidebar {
@@ -31,6 +31,14 @@ body {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: grab;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.movable {
+    cursor: grabbing;
+    transition: none;
 }
 
 .sidebar a {
@@ -43,7 +51,7 @@ body {
 }
 
 .sidebar img {
-    max-width: 100%; 
+    max-width: 60px; 
     border-radius: 5px;
 }
 
@@ -125,8 +133,15 @@ input[type="submit"]:hover {
     animation: fadeIn 1s ease-in-out;
 }
 
+.result .video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .result img {
-    max-width: 100px;
+    max-width: 150px;
     margin-bottom: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -158,11 +173,9 @@ input[type="submit"]:hover {
     100% { color: #FFD700; }
 }
 
-
 @media (max-width: 768px) {
     body {
         margin: 20px;
-        display: block; 
     }
 
     .ma-finder-logo {
@@ -190,61 +203,9 @@ input[type="submit"]:hover {
         margin-bottom: 10px;
     }
 
-   
-    @media (orientation: portrait) {
-        .sidebar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            top: unset;
-            flex-direction: row;
-            justify-content: space-around;
-            padding: 20px 0; 
-            border-radius: 0;
-            background: linear-gradient(120deg, #ff0080, #ff8c00, #40e0d0);
-        }
-
-        .sidebar a {
-            margin: 0;
-            flex-grow: 1;
-            text-align: center;
-        }
-
-        .sidebar img {
-            max-width: 40px; 
-        }
-
-        .main-content {
-            margin-bottom: 120px; 
-        }
-    }
-
-    
-    @media (orientation: landscape) {
-        .sidebar {
-            position: fixed;
-            right: 10px;
-            top: 20%;
-            left: unset;
-            bottom: unset;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding: 10px;
-            border-radius: 10px;
-            background: linear-gradient(120deg, #ff0080, #ff8c00, #40e0d0);
-        }
-
-        .sidebar a {
-            margin: 8px 0;
-        }
-
-        .sidebar img {
-            max-width: 40px; 
-        }
-
-        .main-content {
-            margin-bottom: 0; 
-        }
+    .sidebar {
+        top: 10%;
+        right: 5px;
+        width: 50px;
     }
 }
